@@ -35,7 +35,7 @@ public class RetentionLogic
 	    }
 	  
 	
-	public RetentionLogic () 
+	public RetentionLogic (String PConfig) 
 	{
 		//Load the JDBC Driver
 		try {
@@ -49,7 +49,7 @@ public class RetentionLogic
 		//Load Config File
 		config C = null;
 		try {
-			C = new config();
+			C = new config(PConfig);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

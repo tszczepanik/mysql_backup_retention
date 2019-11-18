@@ -11,17 +11,16 @@ public class config {
 
 
 	Properties prop = new Properties();
-	String fileName = "EscribaRetention.config";
+//	String fileName = "EscribaRetention.config";
 	 
 	   
-public config () throws IOException
+public config (String SPath) throws IOException
 {
-	  File dir1 = new File (".");
-	//   System.out.println ("Current dir : " + dir1.getCanonicalPath());
 	   
     	
 		InputStream is = null;
-		is = new FileInputStream(dir1.getCanonicalPath()+"\\"+fileName);
+		System.out.println(SPath);
+		is = new FileInputStream(SPath);
 		
 		prop.load(is);
 	
@@ -33,4 +32,5 @@ public String getSProperty ( String P)
 	String S = prop.getProperty("esc."+P);
 	return S;
 }
+
 }
